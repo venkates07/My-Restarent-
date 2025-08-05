@@ -1,0 +1,237 @@
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+}
+/* Overlay to improve readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.9);
+  z-index: -1;
+}
+header {
+  background: #a63726;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+header h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav a:hover,
+nav a.active {
+  color: #ffc107;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Section Titles */
+h2.section-title {
+  color: #a63726;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-bottom: 3px solid #a63726;
+  padding-bottom: 0.2rem;
+}
+
+/* MENU Section */
+.menu-filters {
+  margin-bottom: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.menu-filters button {
+  background: #a63726;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.menu-filters button:hover,
+.menu-filters button.active {
+  background: #ffc107;
+  color: #333;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 1rem;
+}
+.menu-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgb(0 0 0 / 0.15);
+  display: flex;
+  flex-direction: column;
+}
+.menu-card img {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  height: 160px;
+}
+.menu-card h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+.menu-card p {
+  flex-grow: 1;
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+.menu-card span {
+  font-weight: 700;
+  color: #a63726;
+}
+
+/* Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  height: 140px;
+  object-fit: cover;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Reservation Section */
+.reservation-form {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  max-width: 480px;
+  margin: 0 auto 3rem;
+}
+.reservation-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #a63726;
+}
+.reservation-form input,
+.reservation-form select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+.reservation-form input:focus,
+.reservation-form select:focus {
+  border-color: #a63726;
+  outline: none;
+}
+.reservation-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #a63726;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.reservation-form button:hover {
+  background: #ffc107;
+  color: #333;
+}
+
+/* Confirmation message */
+#confirmation {
+  text-align: center;
+  font-weight: 700;
+  color: #2d662d;
+  margin-top: 1rem;
+  display: none;
+}
+
+/* Footer */
+footer {
+  background: #a63726;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+footer p {
+  margin: 0;
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.social-icons a {
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #ffc107;
+}
+
+/* Responsive header nav for small screens */
+@media (max-width: 720px) {
+  nav {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+}
